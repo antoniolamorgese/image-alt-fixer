@@ -66,8 +66,8 @@ if(!is_Admin()) {
 								var allImages = jQuery('img');
 								allImages.each(function() {
 									if((jQuery(this).prop("alt") === undefined) || (!jQuery(this).prop("alt"))) {
-									// If IMG doesn't have the ALT property, set it with the H1 tag
-									jQuery(this).prop("alt", titleContent);
+									   // If IMG doesn't have the ALT property, set it with the H1 tag
+									   jQuery(this).prop("alt", titleContent);
 									}
 								});
 								
@@ -75,8 +75,8 @@ if(!is_Admin()) {
 								jQuery('figure').each(function() {
 									captionFigure = jQuery(this).find('figcaption').text();
 									if(captionFigure !== undefined) {
-									// Set the ALT property of the IMG tag with the content of the FIGCAPTION tag
-									jQuery(this).find('img').prop('alt', captionFigure);
+									   // Set the ALT property of the IMG tag with the content of the FIGCAPTION tag
+									   jQuery(this).find('img').prop('alt', captionFigure);
 									}
 								});         
 							}   					
