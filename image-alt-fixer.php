@@ -52,38 +52,40 @@ load_plugin_textdomain( 'image-alt-fixer', FALSE, dirname(plugin_basename(__FILE
  * Fixing all ALT property in the images HTML Tags
  */
 if(!is_Admin()) {
-	if(!function_exists('image_alt_fixer_add_Code_html_in_tag_body')) {
-		function image_alt_fixer_add_Code_html_in_tag_body() {
-			?>
-				<!-- Image ALT Fixer Plugin -->
-				<script>
-					jQuery(document).ready(function(){
-						// Get the content of the H1 tag
-						var titleContent = jQuery("h1").text();
-						if(titleContent != undefined) {
-							// Iterate over all "IMG" elements
-							var allImages = jQuery('img');
-							allImages.each(function() {
-								if((jQuery(this).prop("alt") === undefined) || (!jQuery(this).prop("alt"))) {
-								// If IMG doesn't have the ALT property, set it with the H1 tag
-								jQuery(this).prop("alt", titleContent);
-								}
-							});
-							
-							// Iterate over all "FIGURE" elements
-							jQuery('figure').each(function() {
-								captionFigure = jQuery(this).find('figcaption').text();
-								if(captionFigure !== undefined) {
-								// Set the ALT property of the IMG tag with the content of the FIGCAPTION tag
-								jQuery(this).find('img').prop('alt', captionFigure);
-								}
-							});         
-						}   					
-					});	
-				</script>
-			<?php
+	if(is_single()){
+		if(!function_exists('image_alt_fixer_add_Code_html_in_tag_body')) {
+			function image_alt_fixer_add_Code_html_in_tag_body() {
+				?>
+					<!-- Image ALT Fixer Plugin -->
+					<script>
+						jQuery(document).ready(function(){
+							// Get the content of the H1 tag
+							var titleContent = jQuery("h1").text();
+							if(titleContent != undefined) {
+								// Iterate over all "IMG" elements
+								var allImages = jQuery('img');
+								allImages.each(function() {
+									if((jQuery(this).prop("alt") === undefined) || (!jQuery(this).prop("alt"))) {
+									// If IMG doesn't have the ALT property, set it with the H1 tag
+									jQuery(this).prop("alt", titleContent);
+									}
+								});
+								
+								// Iterate over all "FIGURE" elements
+								jQuery('figure').each(function() {
+									captionFigure = jQuery(this).find('figcaption').text();
+									if(captionFigure !== undefined) {
+									// Set the ALT property of the IMG tag with the content of the FIGCAPTION tag
+									jQuery(this).find('img').prop('alt', captionFigure);
+									}
+								});         
+							}   					
+						});	
+					</script>
+				<?php
+			}	
+			add_action('wp_footer', 'image_alt_fixer_add_Code_html_in_tag_body');
 		}	
-		add_action('wp_footer', 'image_alt_fixer_add_Code_html_in_tag_body');
-	}	
+	}
 }
 
