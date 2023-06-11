@@ -52,7 +52,7 @@ load_plugin_textdomain( 'image-alt-fixer', FALSE, dirname(plugin_basename(__FILE
  * Fixing all ALT property in the images HTML Tags
  */
 if(!is_Admin()) {
-	if(is_single()){
+	if(!is_front_page()){
 		if(!function_exists('image_alt_fixer_add_Code_html_in_tag_body')) {
 			function image_alt_fixer_add_Code_html_in_tag_body() {
 				?>
