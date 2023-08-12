@@ -4,7 +4,7 @@ Contributors: antoniolamorgese
 Donate link: https://www.paypal.com/paypalme/AntonioLAMORGESE
 Tags: alt, image alt, image seo,
 Requires at least: 5.3
-Tested up to: 6.2.2
+Tested up to: 6.3
 Stable tag: 1.1.0
 Requires PHP: 5.6
 License: GPLv2 or later

@@ -23,7 +23,7 @@ ob_start();
  * Domain Path:        /languages
  * GitHub Plugin URI:  https://github.com/antoniolamorgese/image-alt-fixer
  * Requires at least:  5.6
- * Tested up to:       6.2.2
+ * Tested up to:       6.3
  * Requires PHP:       5.6 or later
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
@@ -37,7 +37,7 @@ ob_start();
 /**
  * Exit if called directly.
  */
-if ( ! defined( 'WPINC' ) ) die;
+if ( ! defined( 'ABSPATH' ) ) exit; 
 
  /**
  * Load Localisation files.
@@ -45,7 +45,7 @@ if ( ! defined( 'WPINC' ) ) die;
  * Locales found in:
  * 	 - /wp-content/plugins/image-alt-fixer/languages/image-alt-fixer-LOCALE.mo
  */
-load_plugin_textdomain( 'image-alt-fixer', FALSE, dirname(plugin_basename(__FILE__)) . '/languages' );
+load_plugin_textdomain( 'image-alt-fixer', "", dirname(plugin_basename(__FILE__)) . '/languages' );
 
 /**
  * Create HTML code to include in the BODY tag.
