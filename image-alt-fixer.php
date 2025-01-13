@@ -22,7 +22,7 @@
  * Domain Path:        /languages
  * GitHub Plugin URI:  https://github.com/antoniolamorgese/image-alt-fixer
  * Requires at least:  5.6
- * Tested up to:       6.3
+ * Tested up to:       6.7.1
  * Requires PHP:       5.6 or later
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
